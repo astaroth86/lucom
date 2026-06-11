@@ -38,13 +38,18 @@ Sin esta variable, el botón de envío abre el cliente de correo (`mailto:`).
 
 ## Despliegue
 
-El sitio es estático (`dist/`). Recomendado **Cloudflare Pages** o **Netlify**:
+El sitio es estático (`dist/`). Desplegado en **Cloudflare Pages** conectando
+este repositorio de GitHub:
 
-- Build command: `npm run build`
-- Output directory: `dist`
+| Ajuste | Valor |
+|--------|-------|
+| Framework preset | `Astro` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Production branch | rama con el código (p. ej. `main`) |
 
-Después conecta el dominio `lucom.es` y configura `PUBLIC_FORMSPREE_ID` como
-variable de entorno en el panel del proveedor.
+Después conecta el dominio `lucom.es` desde **Custom domains** y, si usas
+formulario, añade `PUBLIC_FORMSPREE_ID` en **Settings → Environment variables**.
 
 ## Contacto
 
