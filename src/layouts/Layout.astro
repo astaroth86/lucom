@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "LUCOM — Ingeniería electrónica a medida",
+  description = "Diseño soluciones electrónicas que funcionan. Desarrollo de sistemas electrónicos, programación embebida, prototipos, software web/Android y administración de sistemas para empresas y profesionales.",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "LUCOM",
+  description:
+    "Ingeniería electrónica a medida: diseño electrónico, programación embebida, prototipos, desarrollo web y de aplicaciones Android, y administración de sistemas.",
+  url: "https://lucom.es",
+  email: "contacto@lucom.es",
+  areaServed: "ES",
+  knowsAbout: [
+    "Electrónica",
+    "Sistemas embebidos",
+    "Microcontroladores",
+    "Diseño de PCB",
+    "Desarrollo web",
+    "Aplicaciones Android",
+    "Administración de sistemas",
+  ],
+  slogan: "Diseño soluciones electrónicas que funcionan.",
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0a0e14" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="LUCOM" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd)}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
