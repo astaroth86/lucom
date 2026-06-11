@@ -1,0 +1,40 @@
+name: Desplegar a GitHub Pages
+
+on:
+  push:
+    branches: [main, claude/dazzling-mayer-jgsf4z]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite un único despliegue concurrente
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # GitHub Pages sirve el sitio en https://<usuario>.github.io/<repo>
+      SITE: https://astaroth86.github.io
+      BASE_PATH: /lucom
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build con Astro
+        uses: withastro/action@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Desplegar
+        id: deployment
+        uses: actions/deploy-pages@v4
