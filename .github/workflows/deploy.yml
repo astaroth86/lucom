@@ -25,11 +25,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Activar GitHub Pages
-        # Habilita Pages (source = GitHub Actions) sin tocar los ajustes a mano
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Build con Astro
         uses: withastro/action@v3
 
