@@ -1,0 +1,30 @@
+---
+import { NAV, SITE_NAME } from "../consts";
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-[var(--color-line)]/60 bg-[var(--color-base)]/80 backdrop-blur-md"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <a href="/" class="flex items-center gap-2.5 font-extrabold tracking-tight">
+      <span
+        class="grid h-8 w-8 place-items-center rounded-lg border border-[var(--color-accent)]/40 text-[var(--color-accent)]"
+        aria-hidden="true"
+      >
+        <svg width="18" height="18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14 V44 H44"/></svg>
+      </span>
+      <span class="text-lg">{SITE_NAME}</span>
+    </a>
+    <nav class="hidden items-center gap-7 text-sm text-[var(--color-muted)] md:flex">
+      {NAV.map((i) => (
+        <a href={i.href} class="transition-colors hover:text-[var(--color-ink)]">{i.label}</a>
+      ))}
+    </nav>
+    <a
+      href="/#contacto"
+      class="rounded-lg bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-[#04221d] transition-transform hover:-translate-y-0.5"
+    >
+      Solicitar estudio técnico
+    </a>
+  </div>
+</header>

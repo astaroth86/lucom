@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const EMAIL = "contacto@lucom.es";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { EMAIL } from "../consts";
+import { especialidades, serviciosApoyo } from "../data/servicios";
 
 // Configurable desde un .env (PUBLIC_FORMSPREE_ID=xxxxx). Sin él, el
 // formulario cae con elegancia a un mailto:.
@@ -10,47 +12,12 @@ const formAction = formspreeId
   ? `https://formspree.io/f/${formspreeId}`
   : `mailto:${EMAIL}`;
 
-const nav = [
-  { href: "#que-hago", label: "Qué hacemos" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#proceso", label: "Cómo trabajamos" },
-  { href: "#sobre", label: "Sobre LUCOM" },
-  { href: "#contacto", label: "Contacto" },
-];
-
 const problemas = [
-  "Desarrollo de prototipos electrónicos",
-  "Dispositivos que no funcionan correctamente",
+  "Un prototipo de producto para enseñar a inversores o primeros clientes",
+  "Dispositivos conectados (IoT) e integración de sensores",
+  "Electrónica que no funciona como debería",
   "Automatización de equipos",
-  "Integración de sensores",
-  "Mejora de productos existentes",
-];
-
-const servicios = [
-  {
-    titulo: "Diseño electrónico",
-    items: ["Esquemas", "Selección de componentes", "Diseño de PCB"],
-  },
-  {
-    titulo: "Programación embebida",
-    items: ["Microcontroladores", "Comunicaciones", "Sensores"],
-  },
-  {
-    titulo: "Prototipos",
-    items: ["Montaje", "Pruebas", "Ajustes"],
-  },
-  {
-    titulo: "Software web y Android",
-    items: ["Aplicaciones web", "Apps Android", "Paneles e integraciones"],
-  },
-  {
-    titulo: "Administración de sistemas",
-    items: ["Servidores y redes", "Despliegues", "Mantenimiento"],
-  },
-  {
-    titulo: "Estudio técnico",
-    items: ["Análisis de viabilidad", "Definición de la solución", "Presupuesto cerrado"],
-  },
+  "Mejora de un producto existente",
 ];
 
 const proceso = [
@@ -78,33 +45,7 @@ const proceso = [
 ---
 
 <Layout>
-  <!-- ── Navegación ──────────────────────────────────────── -->
-  <header
-    class="fixed inset-x-0 top-0 z-50 border-b border-[var(--color-line)]/60 bg-[var(--color-base)]/80 backdrop-blur-md"
-  >
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-      <a href="#top" class="flex items-center gap-2.5 font-extrabold tracking-tight">
-        <span
-          class="grid h-8 w-8 place-items-center rounded-lg border border-[var(--color-accent)]/40 text-[var(--color-accent)]"
-          aria-hidden="true"
-        >
-          <svg width="18" height="18" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14 V44 H44"/></svg>
-        </span>
-        <span class="text-lg">LUCOM</span>
-      </a>
-      <nav class="hidden items-center gap-7 text-sm text-[var(--color-muted)] md:flex">
-        {nav.map((i) => (
-          <a href={i.href} class="transition-colors hover:text-[var(--color-ink)]">{i.label}</a>
-        ))}
-      </nav>
-      <a
-        href="#contacto"
-        class="rounded-lg bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-[#04221d] transition-transform hover:-translate-y-0.5"
-      >
-        Solicitar estudio técnico
-      </a>
-    </div>
-  </header>
+  <Header />
 
   <main id="top">
     <!-- ── 1 · Cabecera ──────────────────────────────────── -->
@@ -114,7 +55,7 @@ const proceso = [
       <div class="relative mx-auto max-w-6xl px-5 text-center">
         <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-medium text-[var(--color-muted)]">
           <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></span>
-          Ingeniería electrónica a medida
+          Hardware · IoT · Electrónica a medida
         </p>
         <h1 class="mx-auto max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
           Diseñamos soluciones <br class="hidden sm:block" />
@@ -122,8 +63,9 @@ const proceso = [
           <span class="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)] bg-clip-text text-transparent">funcionan</span>.
         </h1>
         <p class="mx-auto mt-7 max-w-2xl text-lg text-[var(--color-muted)]">
-          Diseñamos y desarrollamos soluciones electrónicas para empresas y
-          profesionales. De la idea inicial al prototipo funcional.
+          Llevamos tu idea de hardware del concepto al prototipo funcional.
+          Electrónica, firmware y el software que lo pone en marcha — con un
+          único interlocutor.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
@@ -142,20 +84,24 @@ const proceso = [
       </div>
     </section>
 
-    <!-- ── 2 · Qué hago ──────────────────────────────────── -->
-    <section id="que-hago" class="border-t border-[var(--color-line)]/60 py-20 md:py-28">
+    <!-- ── 2 · Qué hacemos ───────────────────────────────── -->
+    <section id="que-hacemos" class="border-t border-[var(--color-line)]/60 py-20 md:py-28">
       <div class="mx-auto grid max-w-6xl gap-12 px-5 md:grid-cols-2 md:items-center">
         <div>
           <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
-            Soluciones electrónicas a medida
+            De la idea al prototipo que funciona
           </h2>
           <p class="mt-6 text-lg leading-relaxed text-[var(--color-muted)]">
-            Desarrollamos sistemas electrónicos personalizados desde la idea
-            inicial hasta el prototipo funcional.
+            Cubrimos toda la cadena de un producto electrónico —electrónica,
+            firmware y conectividad— en un mismo sitio. Así no tienes que
+            coordinar a varios proveedores en la fase más delicada: validar que
+            tu idea es viable.
           </p>
           <p class="mt-4 text-lg leading-relaxed text-[var(--color-muted)]">
-            Trabajamos con empresas y profesionales que necesitan soluciones
-            fiables y bien diseñadas.
+            Trabajamos con <strong class="text-[var(--color-ink)]">startups de
+            hardware e IoT</strong> que necesitan un primer prototipo, y con
+            <strong class="text-[var(--color-ink)]">empresas y profesionales</strong>
+            que buscan una solución electrónica fiable y bien diseñada.
           </p>
         </div>
         <div class="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8">
@@ -180,22 +126,46 @@ const proceso = [
         <div class="max-w-2xl">
           <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Servicios</h2>
           <p class="mt-4 text-lg text-[var(--color-muted)]">
-            Desde la electrónica hasta el software que la pone en marcha.
+            Nuestra especialidad es el hardware. El software lo acompaña para que
+            tu solución sea completa de extremo a extremo.
           </p>
         </div>
-        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {servicios.map((s) => (
-            <div class="group rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors hover:border-[var(--color-accent)]/50">
-              <h3 class="text-lg font-semibold text-[var(--color-ink)]">{s.titulo}</h3>
-              <ul class="mt-4 space-y-2 text-[var(--color-muted)]">
-                {s.items.map((it) => (
-                  <li class="flex items-center gap-2.5">
-                    <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]/70"></span>
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+        <h3 class="mt-12 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+          Especialidad
+        </h3>
+        <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {especialidades.map((s) => (
+            <a
+              href={`/servicios/${s.slug}`}
+              class="group flex flex-col rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors hover:border-[var(--color-accent)]/50"
+            >
+              <h4 class="text-lg font-semibold text-[var(--color-ink)]">{s.titulo}</h4>
+              <p class="mt-3 flex-1 text-[var(--color-muted)]">{s.resumen}</p>
+              <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-accent)]">
+                Ver más
+                <svg class="transition-transform group-hover:translate-x-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <h3 class="mt-12 text-sm font-semibold uppercase tracking-wider text-[var(--color-muted)]">
+          Servicios de apoyo
+        </h3>
+        <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {serviciosApoyo.map((s) => (
+            <a
+              href={`/servicios/${s.slug}`}
+              class="group flex flex-col rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors hover:border-[var(--color-accent)]/50"
+            >
+              <h4 class="text-lg font-semibold text-[var(--color-ink)]">{s.titulo}</h4>
+              <p class="mt-3 flex-1 text-[var(--color-muted)]">{s.resumen}</p>
+              <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-accent)]">
+                Ver más
+                <svg class="transition-transform group-hover:translate-x-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </a>
           ))}
         </div>
 
@@ -210,7 +180,7 @@ const proceso = [
       </div>
     </section>
 
-    <!-- ── 4 · Cómo trabajo ──────────────────────────────── -->
+    <!-- ── 4 · Cómo trabajamos ───────────────────────────── -->
     <section id="proceso" class="border-t border-[var(--color-line)]/60 py-20 md:py-28">
       <div class="mx-auto max-w-6xl px-5">
         <div class="max-w-2xl">
@@ -241,8 +211,10 @@ const proceso = [
           eficaces y fiables.
         </p>
         <p class="mt-4 text-lg leading-relaxed text-[var(--color-muted)]">
-          Experiencia en electrónica, sistemas embebidos, programación,
-          desarrollo web y de aplicaciones Android, y administración de sistemas.
+          Trabajas mano a mano con quien diseña y construye tu proyecto, sin
+          intermediarios. Experiencia en electrónica, sistemas embebidos,
+          programación, desarrollo web y de aplicaciones Android, y
+          administración de sistemas.
         </p>
       </div>
     </section>
@@ -324,12 +296,5 @@ const proceso = [
     </section>
   </main>
 
-  <!-- ── Pie ─────────────────────────────────────────────── -->
-  <footer class="border-t border-[var(--color-line)]/60 py-10">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-sm text-[var(--color-muted)] sm:flex-row">
-      <p class="font-semibold text-[var(--color-ink)]">LUCOM</p>
-      <p>Ingeniería electrónica a medida · {EMAIL}</p>
-      <p>© {new Date().getFullYear()} LUCOM</p>
-    </div>
-  </footer>
+  <Footer />
 </Layout>
