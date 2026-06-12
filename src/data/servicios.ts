@@ -11,6 +11,12 @@ export interface Servicio {
   intro: string;
   /** Qué incluye el servicio. */
   puntos: string[];
+  /** Título SEO de la pestaña (<title>). Por defecto: "{titulo} — LUCOM". */
+  tituloSeo?: string;
+  /** Encabezado H1 de la página de detalle. Por defecto: titulo. */
+  h1?: string;
+  /** Nota honesta sobre el alcance (hasta dónde llegamos). Opcional. */
+  alcance?: string;
 }
 
 export const servicios: Servicio[] = [
@@ -18,10 +24,12 @@ export const servicios: Servicio[] = [
     slug: "prototipos-iot",
     titulo: "Prototipos de hardware e IoT",
     grupo: "especialidad",
+    tituloSeo: "Prototipo de hardware e IoT para validar tu producto — LUCOM",
+    h1: "Prototipos de hardware e IoT para validar tu producto",
     resumen:
       "De la idea al prototipo funcional que puedes enseñar a inversores o a tus primeros clientes.",
     metaDescription:
-      "Desarrollo de prototipos de hardware e IoT a medida: del concepto al prototipo funcional, con electrónica, firmware y conectividad integrados.",
+      "Desarrollo de prototipos de hardware e IoT a medida para startups y empresas: del concepto al prototipo funcional que puedes enseñar a inversores y clientes.",
     intro:
       "Convertimos una idea de producto electrónico en un prototipo que funciona y se puede enseñar. Cubrimos toda la cadena —electrónica, firmware y conectividad— para que no tengas que coordinar a varios proveedores en la fase más delicada: validar que tu producto es viable.",
     puntos: [
@@ -31,11 +39,15 @@ export const servicios: Servicio[] = [
       "Conectividad e integración de sensores (IoT)",
       "Pruebas, ajustes e iteración sobre el prototipo",
     ],
+    alcance:
+      "Nuestro punto fuerte es llevarte del concepto al prototipo funcional y validado. La industrialización, la certificación (CE/RED/FCC) y la fabricación de series quedan fuera de nuestro alcance habitual: si tu proyecto llega ahí, te lo decimos desde el principio y te orientamos sobre los siguientes pasos.",
   },
   {
     slug: "diseno-electronico",
     titulo: "Diseño electrónico y PCB",
     grupo: "especialidad",
+    tituloSeo: "Diseño electrónico y diseño de PCB a medida — LUCOM",
+    h1: "Diseño electrónico y de PCB a medida",
     resumen:
       "Esquemas, selección de componentes y diseño de placas a medida para tu producto o equipo.",
     metaDescription:
@@ -54,6 +66,8 @@ export const servicios: Servicio[] = [
     slug: "programacion-embebida",
     titulo: "Programación embebida",
     grupo: "especialidad",
+    tituloSeo: "Firmware para microcontroladores a medida — LUCOM",
+    h1: "Programación embebida y firmware a medida",
     resumen:
       "Firmware para microcontroladores, comunicaciones e integración de sensores.",
     metaDescription:
