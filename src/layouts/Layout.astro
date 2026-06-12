@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = "LUCOM — Ingeniería electrónica a medida",
-  description = "Diseñamos soluciones electrónicas que funcionan. Sistemas electrónicos, programación embebida, prototipos, software web y Android y administración de sistemas para empresas y profesionales.",
+  description = "Diseño soluciones electrónicas que funcionan. Sistemas electrónicos, programación embebida, prototipos, software web y Android y administración de sistemas para empresas, profesionales y startups.",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -22,6 +22,10 @@ const jsonLd = {
   url: "https://lucom.es",
   email: "contacto@lucom.es",
   areaServed: "ES",
+  founder: {
+    "@type": "Person",
+    name: "Carlos González",
+  },
   knowsAbout: [
     "Electrónica",
     "Sistemas embebidos",
@@ -31,7 +35,7 @@ const jsonLd = {
     "Aplicaciones Android",
     "Administración de sistemas",
   ],
-  slogan: "Diseñamos soluciones electrónicas que funcionan.",
+  slogan: "Diseño soluciones electrónicas que funcionan.",
 };
 ---
 
