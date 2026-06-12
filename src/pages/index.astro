@@ -12,6 +12,9 @@ const formAction = formspreeId
   ? `https://formspree.io/f/${formspreeId}`
   : `mailto:${EMAIL}`;
 
+// Tras enviar, Formspree redirige aquí (página de gracias propia).
+const graciasUrl = new URL("/gracias", Astro.site).toString();
+
 const problemas = [
   "Un prototipo de producto para enseñar a inversores o primeros clientes",
   "Dispositivos conectados (IoT) e integración de sensores",
@@ -282,6 +285,12 @@ const proceso = [
           method="POST"
           class="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-7 md:p-8"
         >
+          {formspreeId && (
+            <>
+              <input type="hidden" name="_next" value={graciasUrl} />
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde lucom.es" />
+            </>
+          )}
           <div class="space-y-5">
             <div>
               <label for="nombre" class="mb-2 block text-sm font-medium">Nombre</label>

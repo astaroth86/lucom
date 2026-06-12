@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="¡Gracias! — LUCOM"
+  description="Hemos recibido tu mensaje. Te responderemos en menos de 24 horas."
+  noindex={true}
+>
+  <Header />
+
+  <main class="grid min-h-[70vh] place-items-center px-5 pt-32 pb-20 md:pt-40">
+    <div class="mx-auto max-w-xl text-center">
+      <span
+        class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-[var(--color-accent)]/15 text-[var(--color-accent)]"
+        aria-hidden="true"
+      >
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </span>
+      <h1 class="mt-6 text-3xl font-extrabold tracking-tight md:text-4xl">
+        ¡Gracias por tu mensaje!
+      </h1>
+      <p class="mt-5 text-lg leading-relaxed text-[var(--color-muted)]">
+        Lo hemos recibido y te responderemos en menos de 24 horas. Mientras
+        tanto, puedes echar un vistazo a lo que hacemos.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="rounded-xl bg-[var(--color-accent)] px-6 py-3 font-semibold text-[#04221d] transition-transform hover:-translate-y-0.5"
+        >
+          Volver al inicio
+        </a>
+        <a
+          href="/servicios"
+          class="rounded-xl border border-[var(--color-line)] px-6 py-3 font-semibold transition-colors hover:border-[var(--color-accent)]/60"
+        >
+          Ver servicios
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

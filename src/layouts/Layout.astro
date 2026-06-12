@@ -5,11 +5,13 @@ import { CF_BEACON_TOKEN, TEAM } from "../consts";
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "LUCOM — Ingeniería electrónica a medida",
   description = "Diseñamos soluciones electrónicas que funcionan. Hardware, diseño de producto, firmware y gestión de proyectos para empresas, profesionales y startups.",
+  noindex = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -55,6 +57,7 @@ const jsonLd = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#0a0e14" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     {gscVerification && (
       <meta name="google-site-verification" content={gscVerification} />
     )}
