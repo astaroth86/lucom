@@ -7,6 +7,10 @@ export const TEAM_LABEL = "Carlos y Marga";
 // PUBLIC_CF_BEACON_TOKEN.
 export const CF_BEACON_TOKEN = "d5dd04b0d6e54340be637539d2b934f5";
 
+// ID del formulario de Formspree. Es público (va en el action del formulario).
+// Se puede sobrescribir con la variable de entorno PUBLIC_FORMSPREE_ID.
+export const FORMSPREE_ID = "mwvjrgow";
+
 export interface Persona {
   nombre: string;
   rol: string;

@@ -2,12 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { EMAIL, TEAM } from "../consts";
+import { EMAIL, TEAM, FORMSPREE_ID } from "../consts";
 import { especialidades, serviciosApoyo } from "../data/servicios";
 
-// Configurable desde un .env (PUBLIC_FORMSPREE_ID=xxxxx). Sin él, el
-// formulario cae con elegancia a un mailto:.
-const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID;
+// Configurable desde un .env (PUBLIC_FORMSPREE_ID=xxxxx); por defecto usa el
+// ID de consts. Sin ninguno, el formulario cae con elegancia a un mailto:.
+const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID ?? FORMSPREE_ID;
 const formAction = formspreeId
   ? `https://formspree.io/f/${formspreeId}`
   : `mailto:${EMAIL}`;
