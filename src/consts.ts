@@ -1,6 +1,6 @@
 export const SITE_NAME = "LUCOM";
 export const EMAIL = "contacto@lucom.es";
-export const TEAM_LABEL = "Carlos y Margarita";
+export const TEAM_LABEL = "Carlos y Marga";
 
 // Token de Cloudflare Web Analytics. Es público (va incrustado en el HTML),
 // no es un secreto. Se puede sobrescribir con la variable de entorno
@@ -26,9 +26,9 @@ export const TEAM: Persona[] = [
     linkedin: "https://www.linkedin.com/in/carlos-gonzalez-de-opazo/",
   },
   {
-    nombre: "Margarita González",
+    nombre: "Marga",
     rol: "Estrategia de producto, UX y gestión de proyectos",
-    iniciales: "MG",
+    iniciales: "M",
     bio: "Conecto la visión de negocio con las necesidades de las personas usuarias y las decisiones técnicas del equipo. En LUCOM defino el producto y la experiencia de uso, valido hipótesis antes de invertir más recursos y coordino la planificación y la comunicación con clientes, para que la solución sea útil, comprensible y atractiva, no solo viable técnicamente.",
     linkedin: "https://www.linkedin.com/in/margaritaglezhierro/",
   },
