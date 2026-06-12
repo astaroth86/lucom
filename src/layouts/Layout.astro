@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { CF_BEACON_TOKEN } from "../consts";
+import { CF_BEACON_TOKEN, TEAM } from "../consts";
 
 interface Props {
   title?: string;
@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title = "LUCOM — Ingeniería electrónica a medida",
-  description = "Diseño soluciones electrónicas que funcionan. Sistemas electrónicos, programación embebida, prototipos, software web y Android y administración de sistemas para empresas, profesionales y startups.",
+  description = "Diseñamos soluciones electrónicas que funcionan. Hardware, diseño de producto, firmware y gestión de proyectos para empresas, profesionales y startups.",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -27,20 +27,19 @@ const jsonLd = {
   url: "https://lucom.es",
   email: "contacto@lucom.es",
   areaServed: "ES",
-  founder: {
-    "@type": "Person",
-    name: "Carlos González",
-  },
+  founder: TEAM.map((p) => ({ "@type": "Person", name: p.nombre })),
   knowsAbout: [
     "Electrónica",
     "Sistemas embebidos",
     "Microcontroladores",
     "Diseño de PCB",
+    "Diseño de producto",
+    "Gestión de proyectos",
     "Desarrollo web",
     "Aplicaciones Android",
     "Administración de sistemas",
   ],
-  slogan: "Diseño soluciones electrónicas que funcionan.",
+  slogan: "Diseñamos soluciones electrónicas que funcionan.",
 };
 ---
 

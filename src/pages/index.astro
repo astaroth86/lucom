@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { EMAIL, OWNER, LINKEDIN } from "../consts";
+import { EMAIL, TEAM } from "../consts";
 import { especialidades, serviciosApoyo } from "../data/servicios";
 
 // Configurable desde un .env (PUBLIC_FORMSPREE_ID=xxxxx). Sin él, el
@@ -24,7 +24,7 @@ const proceso = [
   {
     n: "01",
     titulo: "Estudio técnico inicial",
-    texto: "Analizo tu necesidad y defino la mejor solución antes de empezar.",
+    texto: "Analizamos tu necesidad y definimos la mejor solución antes de empezar.",
   },
   {
     n: "02",
@@ -55,17 +55,17 @@ const proceso = [
       <div class="relative mx-auto max-w-6xl px-5 text-center">
         <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-1.5 text-xs font-medium text-[var(--color-muted)]">
           <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></span>
-          Hardware · IoT · Electrónica a medida
+          Hardware · Diseño · IoT a medida
         </p>
         <h1 class="mx-auto max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-          Diseño soluciones <br class="hidden sm:block" />
+          Diseñamos soluciones <br class="hidden sm:block" />
           electrónicas que
           <span class="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)] bg-clip-text text-transparent">funcionan</span>.
         </h1>
         <p class="mx-auto mt-7 max-w-2xl text-lg text-[var(--color-muted)]">
-          Llevo tu idea de hardware del concepto al prototipo funcional que
-          puedes enseñar a inversores y clientes. Electrónica, firmware y
-          conectividad — con un único interlocutor.
+          Llevamos tu idea de hardware del concepto al prototipo funcional que
+          puedes enseñar a inversores y clientes. Electrónica, diseño, firmware
+          y gestión del proyecto — con un único equipo.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
@@ -92,26 +92,26 @@ const proceso = [
             De la idea al prototipo que funciona
           </h2>
           <p class="mt-6 text-lg leading-relaxed text-[var(--color-muted)]">
-            Cubro toda la cadena de un producto electrónico —electrónica,
-            firmware y conectividad— en un mismo sitio. Así no tienes que
+            Cubrimos toda la cadena de un producto electrónico —electrónica,
+            firmware, diseño y gestión— en un mismo equipo. Así no tienes que
             coordinar a varios proveedores en la fase más delicada: validar que
             tu idea es viable.
           </p>
           <p class="mt-4 text-lg leading-relaxed text-[var(--color-muted)]">
-            Trabajo con <strong class="text-[var(--color-ink)]">startups de
+            Trabajamos con <strong class="text-[var(--color-ink)]">startups de
             hardware e IoT</strong> que necesitan un primer prototipo, y con
             <strong class="text-[var(--color-ink)]">empresas y profesionales</strong>
             que buscan una solución electrónica fiable y bien diseñada.
           </p>
           <p class="mt-4 rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] p-4 text-sm leading-relaxed text-[var(--color-muted)]">
-            <strong class="text-[var(--color-ink)]">Hasta dónde llego:</strong>
-            mi punto fuerte es la fase de concepto a prototipo validado. Si
-            después necesitas industrialización o certificación, te lo digo con
-            claridad desde el estudio técnico.
+            <strong class="text-[var(--color-ink)]">Hasta dónde llegamos:</strong>
+            nuestro punto fuerte es la fase de concepto a prototipo validado. Si
+            después necesitas industrialización o certificación, te lo decimos
+            con claridad desde el estudio técnico.
           </p>
         </div>
         <div class="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8">
-          <h3 class="text-xl font-semibold">¿En qué puedo ayudarte?</h3>
+          <h3 class="text-xl font-semibold">¿En qué podemos ayudarte?</h3>
           <ul class="mt-6 space-y-3.5">
             {problemas.map((p) => (
               <li class="flex items-start gap-3 text-[var(--color-muted)]">
@@ -132,8 +132,8 @@ const proceso = [
         <div class="max-w-2xl">
           <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Servicios</h2>
           <p class="mt-4 text-lg text-[var(--color-muted)]">
-            Mi especialidad es el hardware. El software lo acompaña para que tu
-            solución sea completa de extremo a extremo.
+            Cubrimos tu producto de principio a fin: lo técnico, el diseño y la
+            gestión. El software de apoyo lo completa de extremo a extremo.
           </p>
         </div>
 
@@ -178,7 +178,7 @@ const proceso = [
         <div class="mt-10 rounded-2xl border border-[var(--color-accent)]/30 bg-gradient-to-br from-[var(--color-surface-2)] to-[var(--color-surface)] p-8 md:p-10">
           <h3 class="text-xl font-semibold text-[var(--color-accent)]">Estudio técnico inicial</h3>
           <p class="mt-3 max-w-3xl text-lg leading-relaxed text-[var(--color-muted)]">
-            Antes de empezar cualquier proyecto realizo un estudio técnico
+            Antes de empezar cualquier proyecto realizamos un estudio técnico
             inicial para definir la mejor solución, acotar el alcance y darte un
             presupuesto claro.
           </p>
@@ -190,9 +190,9 @@ const proceso = [
     <section id="proceso" class="border-t border-[var(--color-line)]/60 py-20 md:py-28">
       <div class="mx-auto max-w-6xl px-5">
         <div class="max-w-2xl">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Cómo trabajo</h2>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Cómo trabajamos</h2>
           <p class="mt-4 text-lg text-[var(--color-muted)]">
-            Trabajo con procesos claros para asegurar resultados fiables.
+            Trabajamos con procesos claros para asegurar resultados fiables.
           </p>
         </div>
         <ol class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -207,46 +207,50 @@ const proceso = [
       </div>
     </section>
 
-    <!-- ── 5 · Sobre mí ──────────────────────────────────── -->
+    <!-- ── 5 · Sobre nosotros ────────────────────────────── -->
     <section id="sobre" class="border-t border-[var(--color-line)]/60 py-20 md:py-28">
       <div class="mx-auto max-w-3xl px-5 text-center">
-        <span
-          class="mx-auto grid h-20 w-20 place-items-center rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-surface)] text-2xl font-extrabold text-[var(--color-accent)]"
-          aria-hidden="true"
-        >
-          CG
-        </span>
-        <h2 class="mt-6 text-3xl font-bold tracking-tight md:text-4xl">
-          Hola, soy {OWNER}
+        <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+          Somos {TEAM.map((p) => p.nombre.split(" ")[0]).join(" y ")}
         </h2>
         <p class="mt-7 text-lg leading-relaxed text-[var(--color-muted)]">
-          Soy la persona detrás de LUCOM. Trabajas directamente conmigo —quien
-          diseña y construye tu proyecto—, sin intermediarios ni capas
-          comerciales.
-        </p>
-        <p class="mt-4 text-lg leading-relaxed text-[var(--color-muted)]">
-          Mi perfil es multidisciplinar: electrónica y sistemas embebidos, y el
-          software que los acompaña (desarrollo web, aplicaciones Android y
-          administración de sistemas). Eso me permite llevar un proyecto de
-          hardware de principio a fin sin que tengas que coordinar a varios
-          proveedores.
+          Detrás de LUCOM somos dos. Trabajas directamente con quienes diseñan y
+          construyen tu proyecto, sin intermediarios ni capas comerciales, y con
+          un equipo que cubre el producto completo: lo técnico, el diseño y la
+          gestión.
         </p>
         <p class="mx-auto mt-6 max-w-xl rounded-xl border border-[var(--color-accent)]/30 bg-[var(--color-surface)] p-4 text-[var(--color-muted)]">
-          He trabajado en proyectos para los sectores
+          Aportamos experiencia en proyectos para los sectores
           <strong class="text-[var(--color-ink)]">aeronáutico y de defensa</strong>,
           donde la fiabilidad y el rigor técnico no son opcionales.
         </p>
-        {LINKEDIN && (
-          <a
-            href={LINKEDIN}
-            target="_blank"
-            rel="noopener"
-            class="mt-7 inline-flex items-center gap-2 rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] px-5 py-2.5 font-medium transition-colors hover:border-[var(--color-accent)]/60"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-            Ver mi perfil en LinkedIn
-          </a>
-        )}
+
+        <div class="mt-10 grid gap-5 sm:grid-cols-2">
+          {TEAM.map((p) => (
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-7">
+              <span
+                class="grid h-16 w-16 place-items-center rounded-full border border-[var(--color-accent)]/40 text-xl font-extrabold text-[var(--color-accent)]"
+                aria-hidden="true"
+              >
+                {p.iniciales}
+              </span>
+              <h3 class="mt-4 text-lg font-semibold text-[var(--color-ink)]">{p.nombre}</h3>
+              <p class="mt-1 text-sm text-[var(--color-muted)]">{p.rol}</p>
+              {p.linkedin && (
+                <a
+                  href={p.linkedin}
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-accent)]"
+                  aria-label={`LinkedIn de ${p.nombre}`}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                  LinkedIn
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -255,10 +259,10 @@ const proceso = [
       <div class="mx-auto grid max-w-6xl gap-12 px-5 md:grid-cols-2">
         <div>
           <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
-            Cuéntame tu proyecto
+            Cuéntanos tu proyecto
           </h2>
           <p class="mt-6 text-lg leading-relaxed text-[var(--color-muted)]">
-            Escríbeme y te responderé en menos de 24 horas.
+            Escríbenos y te responderemos en menos de 24 horas.
           </p>
           <a
             href={`mailto:${EMAIL}`}

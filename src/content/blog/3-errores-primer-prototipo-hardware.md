@@ -33,5 +33,5 @@ las reales.
 
 ---
 
-¿Tienes una idea de hardware entre manos? [Cuéntame tu proyecto](/#contacto) y le
+¿Tienes una idea de hardware entre manos? [Cuéntanos tu proyecto](/#contacto) y le
 damos forma con un estudio técnico inicial.

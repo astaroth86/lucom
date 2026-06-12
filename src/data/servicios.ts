@@ -31,7 +31,7 @@ export const servicios: Servicio[] = [
     metaDescription:
       "Desarrollo de prototipos de hardware e IoT a medida para startups y empresas: del concepto al prototipo funcional que puedes enseñar a inversores y clientes.",
     intro:
-      "Convierto una idea de producto electrónico en un prototipo que funciona y se puede enseñar. Cubro toda la cadena —electrónica, firmware y conectividad— para que no tengas que coordinar a varios proveedores en la fase más delicada: validar que tu producto es viable.",
+      "Convertimos una idea de producto electrónico en un prototipo que funciona y se puede enseñar. Cubrimos toda la cadena —electrónica, firmware y conectividad— para que no tengas que coordinar a varios proveedores en la fase más delicada: validar que tu producto es viable.",
     puntos: [
       "Estudio técnico inicial para definir el alcance",
       "Arquitectura del sistema y selección de componentes",
@@ -40,7 +40,7 @@ export const servicios: Servicio[] = [
       "Pruebas, ajustes e iteración sobre el prototipo",
     ],
     alcance:
-      "Mi punto fuerte es llevarte del concepto al prototipo funcional y validado. La industrialización, la certificación (CE/RED/FCC) y la fabricación de series quedan fuera de mi alcance habitual: si tu proyecto llega ahí, te lo digo desde el principio y te oriento sobre los siguientes pasos.",
+      "Nuestro punto fuerte es llevarte del concepto al prototipo funcional y validado. La industrialización, la certificación (CE/RED/FCC) y la fabricación de series quedan fuera de nuestro alcance habitual: si tu proyecto llega ahí, te lo decimos desde el principio y te orientamos sobre los siguientes pasos.",
   },
   {
     slug: "diseno-electronico",
@@ -53,7 +53,7 @@ export const servicios: Servicio[] = [
     metaDescription:
       "Diseño electrónico a medida: esquemas eléctricos, selección de componentes y diseño de PCB para tu producto o equipo.",
     intro:
-      "Diseño la electrónica de tu producto desde el esquema hasta la placa lista para fabricar, pensando en fiabilidad, coste y facilidad de montaje desde el primer momento.",
+      "Diseñamos la electrónica de tu producto desde el esquema hasta la placa lista para fabricar, pensando en fiabilidad, coste y facilidad de montaje desde el primer momento.",
     puntos: [
       "Esquemas eléctricos",
       "Selección de componentes",
@@ -73,13 +73,51 @@ export const servicios: Servicio[] = [
     metaDescription:
       "Programación embebida a medida: firmware para microcontroladores, protocolos de comunicación e integración de sensores.",
     intro:
-      "Programo el firmware que da vida a tu hardware: estable, eficiente y pensado para funcionar de forma fiable en el mundo real, no solo en el laboratorio.",
+      "Programamos el firmware que da vida a tu hardware: estable, eficiente y pensado para funcionar de forma fiable en el mundo real, no solo en el laboratorio.",
     puntos: [
       "Firmware para microcontroladores",
       "Protocolos de comunicación (UART, I2C, SPI, BLE…)",
       "Integración y lectura de sensores",
       "Gestión de energía y fiabilidad",
       "Depuración y actualizaciones",
+    ],
+  },
+  {
+    slug: "diseno-producto",
+    titulo: "Diseño de producto y experiencia",
+    grupo: "especialidad",
+    tituloSeo: "Diseño de producto, UX/UI y branding — LUCOM",
+    h1: "Diseño de producto, experiencia y marca",
+    resumen:
+      "Del aspecto físico del producto a la interfaz de sus apps y su identidad visual.",
+    metaDescription:
+      "Diseño de producto e industrial, diseño UX/UI de apps y paneles, y diseño gráfico y branding para tu producto electrónico.",
+    intro:
+      "Cuidamos cómo se ve, se usa y se percibe tu producto: desde la carcasa y la ergonomía hasta la interfaz de las apps que lo controlan y la identidad visual con la que se presenta.",
+    puntos: [
+      "Diseño de producto e industrial (carcasas, ergonomía)",
+      "Diseño UX/UI de apps, paneles y web",
+      "Diseño gráfico e identidad de marca",
+      "Prototipado visual y maquetas",
+    ],
+  },
+  {
+    slug: "gestion-proyectos",
+    titulo: "Gestión de proyectos",
+    grupo: "especialidad",
+    tituloSeo: "Gestión de proyectos técnicos — LUCOM",
+    h1: "Gestión de proyectos de principio a fin",
+    resumen:
+      "Coordinamos tu proyecto para que avance con plazos claros y sin sorpresas.",
+    metaDescription:
+      "Gestión de proyectos técnicos: planificación, coordinación y seguimiento para que tu desarrollo avance con plazos claros.",
+    intro:
+      "Nos encargamos de que el proyecto avance: planificación, hitos, coordinación y comunicación clara en cada fase, para que tengas visibilidad y el desarrollo llegue a buen puerto.",
+    puntos: [
+      "Planificación y definición de hitos",
+      "Coordinación técnica y de diseño",
+      "Seguimiento y comunicación clara",
+      "Control de plazos y alcance",
     ],
   },
   {
