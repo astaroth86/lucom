@@ -13,6 +13,10 @@ const {
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
+// Instrumentación opcional vía variables de entorno (no se hardcodean tokens).
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -51,6 +55,9 @@ const jsonLd = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#0a0e14" />
+    {gscVerification && (
+      <meta name="google-site-verification" content={gscVerification} />
+    )}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -79,5 +86,13 @@ const jsonLd = {
   </head>
   <body>
     <slot />
+    {cfBeaconToken && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: cfBeaconToken })}
+      />
+    )}
   </body>
 </html>

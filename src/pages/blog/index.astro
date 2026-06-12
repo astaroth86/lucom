@@ -1,0 +1,65 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const posts = (
+  await getCollection("blog", ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true,
+  )
+).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<Layout
+  title="Blog — LUCOM"
+  description="Artículos sobre electrónica, sistemas embebidos y desarrollo de prototipos de hardware e IoT."
+>
+  <Header />
+
+  <main class="pt-32 pb-20 md:pt-40">
+    <div class="mx-auto max-w-3xl px-5">
+      <nav class="mb-8 text-sm text-[var(--color-muted)]" aria-label="Migas de pan">
+        <a href="/" class="hover:text-[var(--color-ink)]">Inicio</a>
+        <span class="px-2">/</span>
+        <span class="text-[var(--color-ink)]">Blog</span>
+      </nav>
+
+      <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Blog</h1>
+      <p class="mt-5 text-lg text-[var(--color-muted)]">
+        Notas sobre electrónica, sistemas embebidos y el desarrollo de prototipos
+        de hardware e IoT.
+      </p>
+
+      {posts.length === 0 ? (
+        <p class="mt-12 text-[var(--color-muted)]">Pronto publicaré los primeros artículos.</p>
+      ) : (
+        <ul class="mt-12 space-y-5">
+          {posts.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.id}`}
+                class="group block rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors hover:border-[var(--color-accent)]/50"
+              >
+                <time class="text-sm text-[var(--color-muted)]" datetime={post.data.pubDate.toISOString()}>
+                  {fmt(post.data.pubDate)}
+                </time>
+                <h2 class="mt-2 text-xl font-semibold text-[var(--color-ink)]">{post.data.title}</h2>
+                <p class="mt-2 text-[var(--color-muted)]">{post.data.description}</p>
+                <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-accent)]">
+                  Leer más
+                  <svg class="transition-transform group-hover:translate-x-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
