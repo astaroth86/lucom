@@ -4,7 +4,7 @@ export const EMAIL = "contacto@lucom.es";
 
 // URL de LinkedIn. Déjala vacía hasta tener la real; si está vacía,
 // el enlace no se muestra (no se publica un enlace roto).
-export const LINKEDIN = "";
+export const LINKEDIN = "https://www.linkedin.com/in/carlos-gonzalez-de-opazo/";
 
 export const NAV = [
   { href: "/#que-hacemos", label: "Qué hacemos" },
