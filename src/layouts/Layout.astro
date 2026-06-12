@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { CF_BEACON_TOKEN } from "../consts";
 
 interface Props {
   title?: string;
@@ -15,7 +16,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
 // Instrumentación opcional vía variables de entorno (no se hardcodean tokens).
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
-const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN ?? CF_BEACON_TOKEN;
 
 const jsonLd = {
   "@context": "https://schema.org",
